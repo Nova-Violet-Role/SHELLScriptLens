@@ -1,0 +1,712 @@
+[
+ {
+  "id": "sh-ceil-01",
+  "prompt": "A command ran under `timeout <ceiling>s` and the ceiling handling is standard (124 means the ceiling fired). State the exit code AND the ceiling it ran under. Your first line must be exactly `VERDICT: <code>`.\n\nRun: timeout 1s, command sleeps 0.5s.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-ceilings",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 0",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "0",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "1s",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "0"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-ceil-02",
+  "prompt": "A command ran under `timeout <ceiling>s` and the ceiling handling is standard (124 means the ceiling fired). State the exit code AND the ceiling it ran under. Your first line must be exactly `VERDICT: <code>`.\n\nRun: timeout 5s, command sleeps 1s.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-ceilings",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 0",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "0",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "5s",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "0"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-ceil-03",
+  "prompt": "A command ran under `timeout <ceiling>s` and the ceiling handling is standard (124 means the ceiling fired). State the exit code AND the ceiling it ran under. Your first line must be exactly `VERDICT: <code>`.\n\nRun: timeout 10s, command sleeps 2s.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-ceilings",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 0",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "0",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "10s",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "0"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-ceil-04",
+  "prompt": "A command ran under `timeout <ceiling>s` and the ceiling handling is standard (124 means the ceiling fired). State the exit code AND the ceiling it ran under. Your first line must be exactly `VERDICT: <code>`.\n\nRun: timeout 1s, command sleeps 3s.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-ceilings",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 124",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "124",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "1s",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "124"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-ceil-05",
+  "prompt": "A command ran under `timeout <ceiling>s` and the ceiling handling is standard (124 means the ceiling fired). State the exit code AND the ceiling it ran under. Your first line must be exactly `VERDICT: <code>`.\n\nRun: timeout 2s, command sleeps 10s.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-ceilings",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 124",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "124",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "2s",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "124"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-trip-01",
+  "prompt": "A control ran and finished. State its exit code AND name the control. Your first line must be exactly `VERDICT: <code>`.\n\nControl:\nai-slop gate on a sloppy answer fixture\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-controlstrip",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 1",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "1",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "sloppy",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "1"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-trip-02",
+  "prompt": "A control ran and finished. State its exit code AND name the control. Your first line must be exactly `VERDICT: <code>`.\n\nControl:\nai-slop gate on a clean answer fixture\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-controlstrip",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 0",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "0",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "clean",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "0"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-trip-03",
+  "prompt": "A control ran and finished. State its exit code AND name the control. Your first line must be exactly `VERDICT: <code>`.\n\nControl:\nrdc check on a valid skill file\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-controlstrip",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 0",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "0",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "valid",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "0"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-trip-04",
+  "prompt": "A control ran and finished. State its exit code AND name the control. Your first line must be exactly `VERDICT: <code>`.\n\nControl:\nrdc check on a C15-breaking file\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-controlstrip",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 1",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "1",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "C15",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "1"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-trip-05",
+  "prompt": "A control ran and finished. State its exit code AND name the control. Your first line must be exactly `VERDICT: <code>`.\n\nControl:\nrdc check with missing external subset\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-controlstrip",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 2",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "2",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "subset",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "2"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-enc-00",
+  "prompt": "A file was checked with `verifyFile` (counts CR bytes, BOM present, UTF-8 validity). Decide the verdict from its byte description. Your first line must be exactly `VERDICT: ok` or `VERDICT: FAIL <field>` with field cr / bom / utf8.\n\nByte description:\nbytes=12 cr=0 bom=False preview=b'hello\\nworld\\n'\nThe file is clean UTF-8 LF with no BOM.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-encoding",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: ok",
+    "min_tier": 1
+   },
+   {
+    "kind": "not_contains",
+    "value": "VERDICT: FAIL",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "clean",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "ok"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-enc-01",
+  "prompt": "A file was checked with `verifyFile` (counts CR bytes, BOM present, UTF-8 validity). Decide the verdict from its byte description. Your first line must be exactly `VERDICT: ok` or `VERDICT: FAIL <field>` with field cr / bom / utf8.\n\nByte description:\nbytes=6 cr=2 bom=False preview=b'a\\r\\nb\\r\\n'\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-encoding",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: FAIL cr",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "cr",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "cr"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-enc-02",
+  "prompt": "A file was checked with `verifyFile` (counts CR bytes, BOM present, UTF-8 validity). Decide the verdict from its byte description. Your first line must be exactly `VERDICT: ok` or `VERDICT: FAIL <field>` with field cr / bom / utf8.\n\nByte description:\nbytes=6 cr=0 bom=True preview=b'\\xef\\xbb\\xbfhi\\n'\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-encoding",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: FAIL bom",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "bom",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "bom"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-enc-04",
+  "prompt": "A file was checked with `verifyFile` (counts CR bytes, BOM present, UTF-8 validity). Decide the verdict from its byte description. Your first line must be exactly `VERDICT: ok` or `VERDICT: FAIL <field>` with field cr / bom / utf8.\n\nByte description:\nbytes=12 cr=0 bom=False preview=b'h\\xc3\\xa9llo \\xf0\\x9f\\x8c\\x8d\\n'\nThe file is clean UTF-8 LF with no BOM.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-encoding",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: ok",
+    "min_tier": 1
+   },
+   {
+    "kind": "not_contains",
+    "value": "VERDICT: FAIL",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "clean",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "ok"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-enc-05",
+  "prompt": "A file was checked with `verifyFile` (counts CR bytes, BOM present, UTF-8 validity). Decide the verdict from its byte description. Your first line must be exactly `VERDICT: ok` or `VERDICT: FAIL <field>` with field cr / bom / utf8.\n\nByte description:\nbytes=4 cr=1 bom=False preview=b'a\\rb\\n'\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-encoding",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: FAIL cr",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "cr",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "cr"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-man-01",
+  "prompt": "An installer run finished. State what happened to the skill file. Your first line must be exactly `VERDICT: WROTE`.\n\nRun: First install into an empty target.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-manifests",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: WROTE",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "ask-gate-dtd/SKILL.md",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "WROTE"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-man-02",
+  "prompt": "An installer run finished. State what happened to the skill file. Your first line must be exactly `VERDICT: WROTE`.\n\nRun: Reinstall over files this tool installed before.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-manifests",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: WROTE",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "owned",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "WROTE"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-man-03",
+  "prompt": "An installer run finished. State what happened to the skill file. Your first line must be exactly `VERDICT: SKIP`.\n\nRun: A file exists that this tool did not install; no --force.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-manifests",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: SKIP",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "was not installed by",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "SKIP"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-man-04",
+  "prompt": "An installer run finished. State what happened to the skill file. Your first line must be exactly `VERDICT: WROTE`.\n\nRun: Same situation with --force.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-manifests",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: WROTE",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "--force",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "WROTE"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-man-05",
+  "prompt": "An installer run finished. State what happened to the skill file. Your first line must be exactly `VERDICT: KEEP`.\n\nRun: Installed file modified since install, then uninstall.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-manifests",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: KEEP",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "modified since install",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "KEEP"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-sweep-01",
+  "prompt": "Read the following sweep output and answer the question. Your first line must be exactly `VERDICT: <value>`.\n\nSweep output:\ncounts-sweep: commands 145, skills 23, agents 5, checked 173, guards 31, checker controls 40, declarations 2144; 64 places in step\nQuestion: How many commands?\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-sweepverdicts",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 145",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "145",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "145"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-sweep-02",
+  "prompt": "Read the following sweep output and answer the question. Your first line must be exactly `VERDICT: <value>`.\n\nSweep output:\ncounts-sweep: commands 145, skills 23, agents 5, checked 173, guards 31, checker controls 40, declarations 2144; 64 places in step\nQuestion: How many skills?\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-sweepverdicts",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 23",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "23",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "23"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-sweep-03",
+  "prompt": "Read the following sweep output and answer the question. Your first line must be exactly `VERDICT: <value>`.\n\nSweep output:\nenum-sweep: 173 sources, 6510 enumerations resolved, 442 choices spelled, 0 findings\nQuestion: How many sources?\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-sweepverdicts",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 173",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "173",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "173"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-sweep-04",
+  "prompt": "Read the following sweep output and answer the question. Your first line must be exactly `VERDICT: <value>`.\n\nSweep output:\ncounts-sweep: commands 145, skills 23, agents 5, checked 173, guards 31, checker controls 40, declarations 2144; 64 places in step\nQuestion: How many artifacts in total (commands plus skills plus agents)?\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-sweepverdicts",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 173",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "173",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "173"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-sweep-05",
+  "prompt": "Read the following sweep output and answer the question. Your first line must be exactly `VERDICT: <value>`.\n\nSweep output:\nheading-sweep: 0 changed, 148 already in shape, 25 without a grammar_map, 0 without a sigil\ncontrol: a crammed template had 5 C13 findings, none after reshaping, and the reshape is idempotent\nQuestion: How many already in shape?\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-sweepverdicts",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 148",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "148",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "148"
+    ],
+    "min_tier": 3
+   }
+  ]
+ }
+]

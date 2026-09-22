@@ -1,0 +1,59 @@
+[
+ {
+  "id": "sh-v3-sedead",
+  "prompt": "Read this shell artifact and answer. Your first line must be exactly as demanded.\n\nSame six gate outputs: which are NOT alive? First line exactly `VERDICT: <letters>`.\n\nExhibit A:\n{\"alive\": true, \"measures\": [{\"name\": \"tells\", \"holds\": true}, {\"name\": \"hedges\", \"holds\": true}, {\"name\": \"fillers\", \"holds\": true}, {\"name\": \"closers\", \"holds\": true}, {\"name\": \"static_share\", \"holds\": true}, {\"name\": \"rhythm_cv\", \"holds\": true}, {\"name\": \"lexical_mattr\", \"holds\": true}, {\"name\": \"rotation_overlap\", \"holds\": true}]}\nExhibit B:\n{\"alive\": false, \"measures\": [{\"name\": \"tells\", \"holds\": false}, {\"name\": \"hedges\", \"holds\": true}, {\"name\": \"fillers\", \"holds\": true}, {\"name\": \"closers\", \"holds\": true}, {\"name\": \"static_share\", \"holds\": true}, {\"name\": \"rhythm_cv\", \"holds\": true}, {\"name\": \"lexical_mattr\", \"holds\": true}, {\"name\": \"rotation_overlap\", \"holds\": true}]}\nExhibit C:\n{\"alive\": false, \"measures\": [{\"name\": \"tells\", \"holds\": false}, {\"name\": \"hedges\", \"holds\": true}, {\"name\": \"fillers\", \"holds\": true}, {\"name\": \"closers\", \"holds\": false}, {\"name\": \"static_share\", \"holds\": true}, {\"name\": \"rhythm_cv\", \"holds\": true}, {\"name\": \"lexical_mattr\", \"holds\": true}, {\"name\": \"rotation_overlap\", \"holds\": true}]}\nExhibit D:\n{\"alive\": true, \"measures\": [{\"name\": \"tells\", \"holds\": true}, {\"name\": \"hedges\", \"holds\": true}, {\"name\": \"fillers\", \"holds\": true}, {\"name\": \"closers\", \"holds\": true}, {\"name\": \"static_share\", \"holds\": true}, {\"name\": \"rhythm_cv\", \"holds\": true}, {\"name\": \"lexical_mattr\", \"holds\": true}, {\"name\": \"rotation_overlap\", \"holds\": true}]}\nExhibit E:\n{\"alive\": false, \"measures\": [{\"name\": \"tells\", \"holds\": false}, {\"name\": \"hedges\", \"holds\": true}, {\"name\": \"fillers\", \"holds\": true}, {\"name\": \"closers\", \"holds\": true}, {\"name\": \"static_share\", \"holds\": true}, {\"name\": \"rhythm_cv\", \"holds\": false}, {\"name\": \"lexical_mattr\", \"holds\": true}, {\"name\": \"rotation_overlap\", \"holds\": true}]}\nExhibit F:\n{\"alive\": true, \"measures\": [{\"name\": \"tells\", \"holds\": true}, {\"name\": \"hedges\", \"holds\": true}, {\"name\": \"fillers\", \"holds\": true}, {\"name\": \"closers\", \"holds\": true}, {\"name\": \"static_share\", \"holds\": true}, {\"name\": \"rhythm_cv\", \"holds\": true}, {\"name\": \"lexical_mattr\", \"holds\": true}, {\"name\": \"rotation_overlap\", \"holds\": true}]}\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-rev3",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: BCE",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "alive",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "BCE"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-v3-nest0z",
+  "prompt": "Read this shell artifact and answer. Your first line must be exactly as demanded.\n\nNested run: timeout 0s wraps timeout 2s wraps sleep 5s. (timeout 0 disables the outer ceiling.) State the outer exit code AND the ceilings. First line exactly `VERDICT: <code>`.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-rev3",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 124",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "124",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "0s",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "124"
+    ],
+    "min_tier": 3
+   }
+  ]
+ }
+]

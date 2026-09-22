@@ -1,0 +1,59 @@
+[
+ {
+  "id": "sh-real-enc2",
+  "prompt": "Read this shell artifact and answer. Your first line must be exactly as demanded.\n\nBytes: 24116 CR=0 BOM=False UTF8=True. Verdict from verifyFile. First line exactly `VERDICT: ok` or `VERDICT: FAIL <field>`.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-realv1",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: ok",
+    "min_tier": 1
+   },
+   {
+    "kind": "not_contains",
+    "value": "VERDICT: FAIL",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "UTF8",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "ok"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-real-gate1",
+  "prompt": "Read this shell artifact and answer. Your first line must be exactly as demanded.\n\nThe slop gate read a real command file. State alive yes or no. Then name every failing measure, or write `none`. First line exactly `VERDICT: alive <yes/no>`.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-realv1",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: alive yes",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "none",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "alive"
+    ],
+    "min_tier": 3
+   }
+  ]
+ }
+]

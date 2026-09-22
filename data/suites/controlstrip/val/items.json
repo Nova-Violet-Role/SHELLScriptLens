@@ -1,0 +1,126 @@
+[
+ {
+  "id": "sh-trip-06",
+  "prompt": "A control ran and finished. State its exit code AND name the control. Your first line must be exactly `VERDICT: <code>`.\n\nControl:\ntimeout ceiling fired on a hanging command\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-controlstrip",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 124",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "124",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "ceiling",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "124"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-trip-07",
+  "prompt": "A control ran and finished. State its exit code AND name the control. Your first line must be exactly `VERDICT: <code>`.\n\nControl:\ncommand finished before its timeout ceiling\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-controlstrip",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 0",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "0",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "finished",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "0"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-trip-08",
+  "prompt": "A control ran and finished. State its exit code AND name the control. Your first line must be exactly `VERDICT: <code>`.\n\nControl:\nrdc check with missing external subset\n",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 2",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "2",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "subset",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "2"
+    ],
+    "min_tier": 3
+   }
+  ],
+  "skill": "shellscript",
+  "task_type": "shellscript-controlstrip"
+ },
+ {
+  "id": "sh-trip-09",
+  "prompt": "A control ran and finished. State its exit code AND name the control. Your first line must be exactly `VERDICT: <code>`.\n\nControl:\nrdc installer with an unknown --only name\n",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 1",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "1",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "nothing selected",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "1"
+    ],
+    "min_tier": 3
+   }
+  ],
+  "skill": "shellscript",
+  "task_type": "shellscript-controlstrip"
+ }
+]

@@ -1,0 +1,142 @@
+[
+ {
+  "id": "sh-real-swcounts",
+  "prompt": "Read this shell artifact and answer. Your first line must be exactly as demanded.\n\nSweep output:\ncounts-sweep: commands 145, skills 23, agents 5, checked 173, guards 31, checker controls 40, declarations 2144; 64 places in step\nQuestion: how many commands? First line exactly `VERDICT: <n>`.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-realv1",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 145",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "145",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "145"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-real-swenum",
+  "prompt": "Read this shell artifact and answer. Your first line must be exactly as demanded.\n\nSweep output:\nenum-sweep: 173 sources, 6510 enumerations resolved, 442 choices spelled, 0 findings\nQuestion: how many sources? First line exactly `VERDICT: <n>`.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-realv1",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 173",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "173",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "173"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-real-ceil1",
+  "prompt": "Read this shell artifact and answer. Your first line must be exactly as demanded.\n\nRun: timeout 1s, command sleeps 3s. State the exit code AND the ceiling. First line exactly `VERDICT: <code>`.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-realv1",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 124",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "124",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "1s",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "124"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-real-enc1",
+  "prompt": "Read this shell artifact and answer. Your first line must be exactly as demanded.\n\nBytes: 6717 CR=0 BOM=False UTF8=True. Verdict from verifyFile. First line exactly `VERDICT: ok` or `VERDICT: FAIL <field>`.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-realv1",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: ok",
+    "min_tier": 1
+   },
+   {
+    "kind": "not_contains",
+    "value": "VERDICT: FAIL",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "UTF8",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "ok"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-real-man1",
+  "prompt": "Read this shell artifact and answer. Your first line must be exactly as demanded.\n\nDry-run plan first line:\nRoT DtD Commander 10.1.1: installing 1 artifact(s) into C:\\SkillOpt\\fake-dry (dry run)\nHow many artifacts planned? First line exactly `VERDICT: planned <n>`.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-realv1",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: planned 1",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "1 artifact",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "planned"
+    ],
+    "min_tier": 3
+   }
+  ]
+ }
+]

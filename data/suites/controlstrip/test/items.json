@@ -1,0 +1,64 @@
+[
+ {
+  "id": "sh-trip-08",
+  "prompt": "A control ran and finished. State its exit code AND name the control. Your first line must be exactly `VERDICT: <code>`.\n\nControl:\nai-slop gate on the hedges fixture (small-file rule)\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-controlstrip",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 0",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "0",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "hedges",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "0"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-trip-09",
+  "prompt": "A control ran and finished. State its exit code AND name the control. Your first line must be exactly `VERDICT: <code>`.\n\nControl:\nai-slop gate on the tells fixture\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-controlstrip",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 1",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "1",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "tells",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "1"
+    ],
+    "min_tier": 3
+   }
+  ]
+ }
+]

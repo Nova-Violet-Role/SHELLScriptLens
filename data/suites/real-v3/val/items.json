@@ -1,0 +1,64 @@
+[
+ {
+  "id": "sh-v3-nestB",
+  "prompt": "Read this shell artifact and answer. Your first line must be exactly as demanded.\n\nNested run: timeout 2s wraps timeout 5s wraps sleep 10s. State the outer exit code AND the ceilings. First line exactly `VERDICT: <code>`.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-rev3",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 124",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "124",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "2s",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "124"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-v3-nosk",
+  "prompt": "Read this shell artifact and answer. Your first line must be exactly as demanded.\n\nSame dry-run: how many `plan skill` lines? First line exactly `VERDICT: <n>`.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-rev3",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 1",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "1",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "skill",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "1"
+    ],
+    "min_tier": 3
+   }
+  ]
+ }
+]

@@ -1,0 +1,54 @@
+[
+ {
+  "id": "sh-sweep-08",
+  "prompt": "Read the following sweep output and answer the question. Your first line must be exactly `VERDICT: <value>`.\n\nSweep output:\ncounts-sweep: commands 145, skills 23, agents 5, checked 173, guards 31, checker controls 40, declarations 2144; 64 places in step\nQuestion: How many guards?\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-sweepverdicts",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 31",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "31",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "31"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-sweep-09",
+  "prompt": "Read the following sweep output and answer the question. Your first line must be exactly `VERDICT: <value>`.\n\nSweep output:\ncounts-sweep: commands 145, skills 23, agents 5, checked 173, guards 31, checker controls 40, declarations 2144; 64 places in step\nQuestion: By how much do checker controls exceed guards?\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-sweepverdicts",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 9",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "9",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "9"
+    ],
+    "min_tier": 3
+   }
+  ]
+ }
+]

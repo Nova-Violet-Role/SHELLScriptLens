@@ -1,0 +1,157 @@
+[
+ {
+  "id": "sh-trip-01",
+  "prompt": "A control ran and finished. State its exit code AND name the control. Your first line must be exactly `VERDICT: <code>`.\n\nControl:\nai-slop gate on a sloppy answer fixture\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-controlstrip",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 1",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "1",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "sloppy",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "1"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-trip-02",
+  "prompt": "A control ran and finished. State its exit code AND name the control. Your first line must be exactly `VERDICT: <code>`.\n\nControl:\nai-slop gate on a clean answer fixture\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-controlstrip",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 0",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "0",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "clean",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "0"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-trip-03",
+  "prompt": "A control ran and finished. State its exit code AND name the control. Your first line must be exactly `VERDICT: <code>`.\n\nControl:\nrdc check on a valid skill file\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-controlstrip",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 0",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "0",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "valid",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "0"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-trip-04",
+  "prompt": "A control ran and finished. State its exit code AND name the control. Your first line must be exactly `VERDICT: <code>`.\n\nControl:\nrdc check on a C15-breaking file\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-controlstrip",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 1",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "1",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "C15",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "1"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-trip-05",
+  "prompt": "A control ran and finished. State its exit code AND name the control. Your first line must be exactly `VERDICT: <code>`.\n\nControl:\nrdc check with missing external subset\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-controlstrip",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 2",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "2",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "subset",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "2"
+    ],
+    "min_tier": 3
+   }
+  ]
+ }
+]

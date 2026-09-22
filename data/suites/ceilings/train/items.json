@@ -1,0 +1,157 @@
+[
+ {
+  "id": "sh-ceil-01",
+  "prompt": "A command ran under `timeout <ceiling>s` and the ceiling handling is standard (124 means the ceiling fired). State the exit code AND the ceiling it ran under. Your first line must be exactly `VERDICT: <code>`.\n\nRun: timeout 1s, command sleeps 0.5s.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-ceilings",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 0",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "0",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "1s",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "0"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-ceil-02",
+  "prompt": "A command ran under `timeout <ceiling>s` and the ceiling handling is standard (124 means the ceiling fired). State the exit code AND the ceiling it ran under. Your first line must be exactly `VERDICT: <code>`.\n\nRun: timeout 5s, command sleeps 1s.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-ceilings",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 0",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "0",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "5s",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "0"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-ceil-03",
+  "prompt": "A command ran under `timeout <ceiling>s` and the ceiling handling is standard (124 means the ceiling fired). State the exit code AND the ceiling it ran under. Your first line must be exactly `VERDICT: <code>`.\n\nRun: timeout 10s, command sleeps 2s.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-ceilings",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 0",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "0",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "10s",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "0"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-ceil-04",
+  "prompt": "A command ran under `timeout <ceiling>s` and the ceiling handling is standard (124 means the ceiling fired). State the exit code AND the ceiling it ran under. Your first line must be exactly `VERDICT: <code>`.\n\nRun: timeout 1s, command sleeps 3s.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-ceilings",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 124",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "124",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "1s",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "124"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-ceil-05",
+  "prompt": "A command ran under `timeout <ceiling>s` and the ceiling handling is standard (124 means the ceiling fired). State the exit code AND the ceiling it ran under. Your first line must be exactly `VERDICT: <code>`.\n\nRun: timeout 2s, command sleeps 10s.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-ceilings",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 124",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "124",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "2s",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "124"
+    ],
+    "min_tier": 3
+   }
+  ]
+ }
+]

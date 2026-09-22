@@ -1,0 +1,106 @@
+[
+ {
+  "id": "sh-sweep-06",
+  "prompt": "Read the following sweep output and answer the question. Your first line must be exactly `VERDICT: <value>`.\n\nSweep output:\nheading-sweep: 0 changed, 148 already in shape, 25 without a grammar_map, 0 without a sigil\ncontrol: a crammed template had 5 C13 findings, none after reshaping, and the reshape is idempotent\nQuestion: How many without a grammar_map?\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-sweepverdicts",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 25",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "25",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "25"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-sweep-07",
+  "prompt": "Read the following sweep output and answer the question. Your first line must be exactly `VERDICT: <value>`.\n\nSweep output:\nfrontmatter-sweep: 0 changed, 173 already parse\ncontrol: a planted front matter had 2 C14 findings, none after quoting, the bracketed hint untouched, and the quoting is idempotent\nQuestion: How many already parse?\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-sweepverdicts",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 173",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "173",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "173"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-sweep-08",
+  "prompt": "Read the following sweep output and answer. Your first line must be exactly `VERDICT: <value>`.\n\nSweep output:\ncounts-sweep: commands 145, skills 23, agents 5, checked 173, guards 31, checker controls 40, declarations 2144; 64 places in step\nQuestion: commands plus agents minus skills?\n",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 127",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "127",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "127"
+    ],
+    "min_tier": 3
+   }
+  ],
+  "skill": "shellscript",
+  "task_type": "shellscript-sweepverdicts"
+ },
+ {
+  "id": "sh-sweep-09",
+  "prompt": "Read the following sweep output and answer. Your first line must be exactly `VERDICT: <value>`.\n\nSweep output:\ncounts-sweep: commands 145, skills 23, agents 5, checked 173, guards 31, checker controls 40, declarations 2144; 64 places in step\nQuestion: checked minus commands minus agents?\n",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 23",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "23",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "23"
+    ],
+    "min_tier": 3
+   }
+  ],
+  "skill": "shellscript",
+  "task_type": "shellscript-sweepverdicts"
+ }
+]

@@ -1,0 +1,132 @@
+[
+ {
+  "id": "sh-man-01",
+  "prompt": "An installer run finished. State what happened to the skill file. Your first line must be exactly `VERDICT: WROTE`.\n\nRun: First install into an empty target.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-manifests",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: WROTE",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "ask-gate-dtd/SKILL.md",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "WROTE"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-man-02",
+  "prompt": "An installer run finished. State what happened to the skill file. Your first line must be exactly `VERDICT: WROTE`.\n\nRun: Reinstall over files this tool installed before.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-manifests",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: WROTE",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "owned",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "WROTE"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-man-03",
+  "prompt": "An installer run finished. State what happened to the skill file. Your first line must be exactly `VERDICT: SKIP`.\n\nRun: A file exists that this tool did not install; no --force.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-manifests",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: SKIP",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "was not installed by",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "SKIP"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-man-04",
+  "prompt": "An installer run finished. State what happened to the skill file. Your first line must be exactly `VERDICT: WROTE`.\n\nRun: Same situation with --force.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-manifests",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: WROTE",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "--force",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "WROTE"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-man-05",
+  "prompt": "An installer run finished. State what happened to the skill file. Your first line must be exactly `VERDICT: KEEP`.\n\nRun: Installed file modified since install, then uninstall.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-manifests",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: KEEP",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "modified since install",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "KEEP"
+    ],
+    "min_tier": 3
+   }
+  ]
+ }
+]

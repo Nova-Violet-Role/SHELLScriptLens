@@ -1,0 +1,142 @@
+[
+ {
+  "id": "sh-v3-nest0",
+  "prompt": "Read this shell artifact and answer. Your first line must be exactly as demanded.\n\nNested run: timeout 10s wraps timeout 2s wraps sleep 1s. State the outer exit code AND the ceilings. First line exactly `VERDICT: <code>`.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-rev3",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 0",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "0",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "10s",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "0"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-v3-nestA",
+  "prompt": "Read this shell artifact and answer. Your first line must be exactly as demanded.\n\nNested run: timeout 5s wraps timeout 2s wraps sleep 10s. State the outer exit code AND the ceilings. First line exactly `VERDICT: <code>`.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-rev3",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 124",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "124",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "5s",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "124"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-v3-sealive",
+  "prompt": "Read this shell artifact and answer. Your first line must be exactly as demanded.\n\nSix gate outputs (trimmed JSON, letters only). Which are alive? First line exactly `VERDICT: <letters>`.\n\nExhibit A:\n{\"alive\": true, \"measures\": [{\"name\": \"tells\", \"holds\": true}, {\"name\": \"hedges\", \"holds\": true}, {\"name\": \"fillers\", \"holds\": true}, {\"name\": \"closers\", \"holds\": true}, {\"name\": \"static_share\", \"holds\": true}, {\"name\": \"rhythm_cv\", \"holds\": true}, {\"name\": \"lexical_mattr\", \"holds\": true}, {\"name\": \"rotation_overlap\", \"holds\": true}]}\nExhibit B:\n{\"alive\": false, \"measures\": [{\"name\": \"tells\", \"holds\": false}, {\"name\": \"hedges\", \"holds\": true}, {\"name\": \"fillers\", \"holds\": true}, {\"name\": \"closers\", \"holds\": true}, {\"name\": \"static_share\", \"holds\": true}, {\"name\": \"rhythm_cv\", \"holds\": true}, {\"name\": \"lexical_mattr\", \"holds\": true}, {\"name\": \"rotation_overlap\", \"holds\": true}]}\nExhibit C:\n{\"alive\": false, \"measures\": [{\"name\": \"tells\", \"holds\": false}, {\"name\": \"hedges\", \"holds\": true}, {\"name\": \"fillers\", \"holds\": true}, {\"name\": \"closers\", \"holds\": false}, {\"name\": \"static_share\", \"holds\": true}, {\"name\": \"rhythm_cv\", \"holds\": true}, {\"name\": \"lexical_mattr\", \"holds\": true}, {\"name\": \"rotation_overlap\", \"holds\": true}]}\nExhibit D:\n{\"alive\": true, \"measures\": [{\"name\": \"tells\", \"holds\": true}, {\"name\": \"hedges\", \"holds\": true}, {\"name\": \"fillers\", \"holds\": true}, {\"name\": \"closers\", \"holds\": true}, {\"name\": \"static_share\", \"holds\": true}, {\"name\": \"rhythm_cv\", \"holds\": true}, {\"name\": \"lexical_mattr\", \"holds\": true}, {\"name\": \"rotation_overlap\", \"holds\": true}]}\nExhibit E:\n{\"alive\": false, \"measures\": [{\"name\": \"tells\", \"holds\": false}, {\"name\": \"hedges\", \"holds\": true}, {\"name\": \"fillers\", \"holds\": true}, {\"name\": \"closers\", \"holds\": true}, {\"name\": \"static_share\", \"holds\": true}, {\"name\": \"rhythm_cv\", \"holds\": false}, {\"name\": \"lexical_mattr\", \"holds\": true}, {\"name\": \"rotation_overlap\", \"holds\": true}]}\nExhibit F:\n{\"alive\": true, \"measures\": [{\"name\": \"tells\", \"holds\": true}, {\"name\": \"hedges\", \"holds\": true}, {\"name\": \"fillers\", \"holds\": true}, {\"name\": \"closers\", \"holds\": true}, {\"name\": \"static_share\", \"holds\": true}, {\"name\": \"rhythm_cv\", \"holds\": true}, {\"name\": \"lexical_mattr\", \"holds\": true}, {\"name\": \"rotation_overlap\", \"holds\": true}]}\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-rev3",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: ADF",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "alive",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "ADF"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-v3-nort",
+  "prompt": "Read this shell artifact and answer. Your first line must be exactly as demanded.\n\nDry-run output (first 5 + last 3 lines shown, 79 plan lines total):\nRoT DtD Commander 10.1.1: installing 1 artifact(s) into C:\\SkillOpt\\fake-dry (dry run)\n  plan skill ask-gate-dtd/SKILL.md -> C:\\SkillOpt\\fake-dry\\skills\\ask-gate-dtd\\SKILL.md\n  plan runtime bin/adiutor.mjs -> C:\\SkillOpt\\fake-dry\\rot-dtd-commander\\bin\\adiutor.mjs\n  plan runtime lib/dtd.mjs -> C:\\SkillOpt\\fake-dry\\rot-dtd-commander\\lib\\dtd.mjs\n  plan runtime lib/amplify.mjs -> C:\\SkillOpt\\fake-dry\\rot-dtd-commander\\lib\\amplify.mjs\n[...]\n  monitor: not started by Claude Code; run it by hand with rdc watch (ceiling 300 s)\n\nplanned 1 artifact(s); skipped 0; failed 0\nHow many `plan runtime` lines? First line exactly `VERDICT: <n>`.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-rev3",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 78",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "78",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "78"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-v3-dryfull",
+  "prompt": "Read this shell artifact and answer. Your first line must be exactly as demanded.\n\nA full dry-run install plans artifacts. How many? First line exactly `VERDICT: <n> artifact(s)`.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-rev3",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 173",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "173 artifact",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "173"
+    ],
+    "min_tier": 3
+   }
+  ]
+ }
+]

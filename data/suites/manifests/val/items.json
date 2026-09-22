@@ -1,0 +1,116 @@
+[
+ {
+  "id": "sh-man-06",
+  "prompt": "An installer run finished. State what happened to the skill file. Your first line must be exactly `VERDICT: removed`.\n\nRun: Uninstall with nothing modified.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-manifests",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: removed",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "removed",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "removed"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-man-07",
+  "prompt": "An installer run finished. State what happened to the skill file. Your first line must be exactly `VERDICT: die`.\n\nRun: Uninstall with no manifest present.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-manifests",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: die",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "no manifest",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "die"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-man-10",
+  "prompt": "An installer run finished. State what happened. Your first line must be exactly `VERDICT: <word>`.\n\nRun: install --dry-run --skills --only ask-gate-dtd plans without writing anything.\n",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: planned",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "planned",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "1 artifact",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "planned"
+    ],
+    "min_tier": 3
+   }
+  ],
+  "skill": "shellscript",
+  "task_type": "shellscript-manifests"
+ },
+ {
+  "id": "sh-man-11",
+  "prompt": "An installer run finished. State what happened. Your first line must be exactly `VERDICT: <word>`.\n\nRun: install --yes --skills --only nosuchname-here dies before writing anything.\n",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: die",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "die",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "nothing selected",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "die"
+    ],
+    "min_tier": 3
+   }
+  ],
+  "skill": "shellscript",
+  "task_type": "shellscript-manifests"
+ }
+]

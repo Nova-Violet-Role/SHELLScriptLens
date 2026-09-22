@@ -1,0 +1,18 @@
+# SHELLScriptLens preset: VERY HARD — verdicts plus evidence.
+name: very-hard
+description: >
+  Verdict plus the control, ceiling, field or decision named. A code with
+  no named control is not a verdict.
+tier: 2
+epochs: 6
+edit_budget: 6
+batch_size: 25
+gate: hard
+suites:
+  - sweepverdicts
+  - controlstrip
+  - ceilings
+  - encoding
+  - manifests
+  - real-v1
+  - real-v3

@@ -1,0 +1,54 @@
+[
+ {
+  "id": "sh-man-08",
+  "prompt": "An installer run finished. State what happened to the skill file. Your first line must be exactly `VERDICT: tracked`.\n\nRun: Manifest records sha256 and bytes of each installed file.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-manifests",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: tracked",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "sha256",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "tracked"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-man-09",
+  "prompt": "An installer run finished. State what happened to the skill file. Your first line must be exactly `VERDICT: stable`.\n\nRun: Reinstall of unchanged files keeps identical manifest hashes.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-manifests",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: stable",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "same sha",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "stable"
+    ],
+    "min_tier": 3
+   }
+  ]
+ }
+]

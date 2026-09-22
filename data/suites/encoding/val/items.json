@@ -1,0 +1,116 @@
+[
+ {
+  "id": "sh-enc-03",
+  "prompt": "A file was checked with `verifyFile` (counts CR bytes, BOM present, UTF-8 validity). Decide the verdict from its byte description. Your first line must be exactly `VERDICT: ok` or `VERDICT: FAIL <field>` with field cr / bom / utf8.\n\nByte description:\nbytes=9 cr=2 bom=True preview=b'\\xef\\xbb\\xbfa\\r\\nb\\r\\n'\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-encoding",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: FAIL cr",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "cr",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "cr"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-enc-06",
+  "prompt": "A file was checked with `verifyFile` (counts CR bytes, BOM present, UTF-8 validity). Decide the verdict from its byte description. Your first line must be exactly `VERDICT: ok` or `VERDICT: FAIL <field>` with field cr / bom / utf8.\n\nByte description:\nbytes=0 cr=0 bom=False preview=b''\nThe file is clean UTF-8 LF with no BOM.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-encoding",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: ok",
+    "min_tier": 1
+   },
+   {
+    "kind": "not_contains",
+    "value": "VERDICT: FAIL",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "clean",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "ok"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-enc-09",
+  "prompt": "A file was checked with `verifyFile` (counts CR bytes, BOM present, UTF-8 validity). Decide the verdict from its byte description. Your first line must be exactly `VERDICT: ok` or `VERDICT: FAIL <field>` with field cr / bom / utf8.\n\nByte description:\nbytes=6 cr=0 bom=False preview='\\xff\\xfeh\\x00i\\x00'\n",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: FAIL utf8",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "utf8",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "utf8"
+    ],
+    "min_tier": 3
+   }
+  ],
+  "skill": "shellscript",
+  "task_type": "shellscript-encoding"
+ },
+ {
+  "id": "sh-enc-10",
+  "prompt": "A file was checked with `verifyFile` (counts CR bytes, BOM present, UTF-8 validity). Decide the verdict from its byte description. Your first line must be exactly `VERDICT: ok` or `VERDICT: FAIL <field>` with field cr / bom / utf8.\n\nByte description:\nbytes=4 cr=0 bom=False preview='a\\x00b\\n'\nNUL is valid UTF-8, so the file is clean UTF-8 with no BOM or CR bytes.\n",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: ok",
+    "min_tier": 1
+   },
+   {
+    "kind": "not_contains",
+    "value": "VERDICT: FAIL",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "clean",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "ok"
+    ],
+    "min_tier": 3
+   }
+  ],
+  "skill": "shellscript",
+  "task_type": "shellscript-encoding"
+ }
+]

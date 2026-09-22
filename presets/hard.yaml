@@ -1,0 +1,19 @@
+# SHELLScriptLens preset: HARD — verdicts only.
+name: hard
+description: >
+  Verdict-level judgment over all SHELLScriptLens suites. The model states
+  exit codes, readings and decisions with no evidence demanded beyond the
+  value itself. Entry tier.
+tier: 1
+epochs: 4
+edit_budget: 4
+batch_size: 25
+gate: hard
+suites:
+  - sweepverdicts
+  - controlstrip
+  - ceilings
+  - encoding
+  - manifests
+  - real-v1
+  - real-v3

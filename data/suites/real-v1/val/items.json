@@ -1,0 +1,59 @@
+[
+ {
+  "id": "sh-real-swhead",
+  "prompt": "Read this shell artifact and answer. Your first line must be exactly as demanded.\n\nSweep output:\nheading-sweep: 0 changed, 148 already in shape, 25 without a grammar_map, 0 without a sigil\nQuestion: how many already in shape? First line exactly `VERDICT: <n>`.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-realv1",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 148",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "148",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "148"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "sh-real-ceil0",
+  "prompt": "Read this shell artifact and answer. Your first line must be exactly as demanded.\n\nRun: timeout 0s, command sleeps 2s. State the exit code AND the ceiling. First line exactly `VERDICT: <code>`.\n",
+  "skill": "shellscript",
+  "task_type": "shellscript-realv1",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: 0",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "0",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "0s",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "0"
+    ],
+    "min_tier": 3
+   }
+  ]
+ }
+]
